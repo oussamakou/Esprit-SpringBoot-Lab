@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.services;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.springbootlab.entities.universite;
 import tn.esprit.springbootlab.repositories.UniversiteRepository;
@@ -8,10 +7,13 @@ import tn.esprit.springbootlab.repositories.UniversiteRepository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class UniversiteServiceImpl implements IUniversiteService {
 
     private final UniversiteRepository universiteRepository;
+
+    public UniversiteServiceImpl(UniversiteRepository universiteRepository) {
+        this.universiteRepository = universiteRepository;
+    }
 
     @Override
     public List<universite> retrieveAllUniversites() {

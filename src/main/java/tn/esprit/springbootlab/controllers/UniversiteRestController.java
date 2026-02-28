@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.controllers;
 
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springbootlab.entities.universite;
 import tn.esprit.springbootlab.services.IUniversiteService;
@@ -9,10 +8,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/universite")
-@AllArgsConstructor
 public class UniversiteRestController {
 
     private final IUniversiteService universiteService;
+
+    public UniversiteRestController(IUniversiteService universiteService) {
+        this.universiteService = universiteService;
+    }
 
     // GET http://localhost:9090/universite/retrieve-all-universites
     @GetMapping("/retrieve-all-universites")

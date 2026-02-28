@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.controllers;
 
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springbootlab.entities.etudiant;
 import tn.esprit.springbootlab.services.IEtudiantService;
@@ -9,10 +8,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/etudiant")
-@AllArgsConstructor
 public class EtudiantRestController {
 
     private final IEtudiantService etudiantService;
+
+    public EtudiantRestController(IEtudiantService etudiantService) {
+        this.etudiantService = etudiantService;
+    }
 
     // GET http://localhost:9090/etudiant/retrieve-all-etudiants
     @GetMapping("/retrieve-all-etudiants")

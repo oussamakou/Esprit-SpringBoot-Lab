@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.services;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.springbootlab.entities.reservation;
 import tn.esprit.springbootlab.repositories.ReservationRepository;
@@ -8,10 +7,13 @@ import tn.esprit.springbootlab.repositories.ReservationRepository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class ReservationServiceImpl implements IReservationService {
 
     private final ReservationRepository reservationRepository;
+
+    public ReservationServiceImpl(ReservationRepository reservationRepository) {
+        this.reservationRepository = reservationRepository;
+    }
 
     @Override
     public List<reservation> retrieveAllReservations() {

@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.services;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.springbootlab.entities.chambre;
 import tn.esprit.springbootlab.repositories.ChambreRepository;
@@ -8,10 +7,13 @@ import tn.esprit.springbootlab.repositories.ChambreRepository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class ChambreServiceImpl implements IChambreService {
 
     private final ChambreRepository chambreRepository;
+
+    public ChambreServiceImpl(ChambreRepository chambreRepository) {
+        this.chambreRepository = chambreRepository;
+    }
 
     @Override
     public List<chambre> retrieveAllChambres() {

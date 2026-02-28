@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.services;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.springbootlab.entities.foyer;
 import tn.esprit.springbootlab.repositories.FoyerRepository;
@@ -8,10 +7,13 @@ import tn.esprit.springbootlab.repositories.FoyerRepository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class FoyerServiceImpl implements IFoyerService {
 
     private final FoyerRepository foyerRepository;
+
+    public FoyerServiceImpl(FoyerRepository foyerRepository) {
+        this.foyerRepository = foyerRepository;
+    }
 
     @Override
     public List<foyer> retrieveAllFoyers() {

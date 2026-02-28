@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.controllers;
 
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springbootlab.entities.bloc;
 import tn.esprit.springbootlab.services.IBlocService;
@@ -9,10 +8,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bloc")
-@AllArgsConstructor
 public class BlocRestController {
 
     private final IBlocService blocService;
+
+    public BlocRestController(IBlocService blocService) {
+        this.blocService = blocService;
+    }
 
     // GET http://localhost:9090/bloc/retrieve-all-blocs
     @GetMapping("/retrieve-all-blocs")

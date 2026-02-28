@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.controllers;
 
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springbootlab.entities.chambre;
 import tn.esprit.springbootlab.services.IChambreService;
@@ -9,10 +8,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/chambre")
-@AllArgsConstructor
 public class ChambreRestController {
 
     private final IChambreService chambreService;
+
+    public ChambreRestController(IChambreService chambreService) {
+        this.chambreService = chambreService;
+    }
 
     // GET http://localhost:9090/chambre/retrieve-all-chambres
     @GetMapping("/retrieve-all-chambres")

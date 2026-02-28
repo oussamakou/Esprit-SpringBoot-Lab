@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.services;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.springbootlab.entities.bloc;
 import tn.esprit.springbootlab.repositories.BlocRepository;
@@ -8,11 +7,13 @@ import tn.esprit.springbootlab.repositories.BlocRepository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor  // ✅ Injection de Dépendance par Constructeur (via Lombok)
 public class BlocServiceImpl implements IBlocService {
 
-    // Spring injecte automatiquement une instance de BlocRepository ici
     private final BlocRepository blocRepository;
+
+    public BlocServiceImpl(BlocRepository blocRepository) {
+        this.blocRepository = blocRepository;
+    }
 
     @Override
     public List<bloc> retrieveAllBlocs() {

@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.services;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.springbootlab.entities.etudiant;
 import tn.esprit.springbootlab.repositories.EtudiantRepository;
@@ -8,10 +7,13 @@ import tn.esprit.springbootlab.repositories.EtudiantRepository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class EtudiantServiceImpl implements IEtudiantService {
 
     private final EtudiantRepository etudiantRepository;
+
+    public EtudiantServiceImpl(EtudiantRepository etudiantRepository) {
+        this.etudiantRepository = etudiantRepository;
+    }
 
     @Override
     public List<etudiant> retrieveAllEtudiants() {

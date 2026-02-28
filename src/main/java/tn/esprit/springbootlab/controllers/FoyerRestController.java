@@ -1,6 +1,5 @@
 package tn.esprit.springbootlab.controllers;
 
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springbootlab.entities.foyer;
 import tn.esprit.springbootlab.services.IFoyerService;
@@ -9,10 +8,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/foyer")
-@AllArgsConstructor
 public class FoyerRestController {
 
     private final IFoyerService foyerService;
+
+    public FoyerRestController(IFoyerService foyerService) {
+        this.foyerService = foyerService;
+    }
 
     // GET http://localhost:9090/foyer/retrieve-all-foyers
     @GetMapping("/retrieve-all-foyers")
