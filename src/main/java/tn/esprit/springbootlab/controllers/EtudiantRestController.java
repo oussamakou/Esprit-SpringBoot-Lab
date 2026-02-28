@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class EtudiantRestController {
 
-    IEtudiantService etudiantService;
+    private final IEtudiantService etudiantService;
 
     // GET http://localhost:9090/etudiant/retrieve-all-etudiants
     @GetMapping("/retrieve-all-etudiants")

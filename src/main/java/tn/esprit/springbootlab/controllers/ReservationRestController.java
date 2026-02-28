@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ReservationRestController {
 
-    IReservationService reservationService;
+    private final IReservationService reservationService;
 
     // GET http://localhost:9090/reservation/retrieve-all-reservations
     @GetMapping("/retrieve-all-reservations")

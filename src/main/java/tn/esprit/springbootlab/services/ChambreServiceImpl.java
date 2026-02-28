@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ChambreServiceImpl implements IChambreService {
 
-    ChambreRepository chambreRepository;
+    private final ChambreRepository chambreRepository;
 
     @Override
     public List<chambre> retrieveAllChambres() {

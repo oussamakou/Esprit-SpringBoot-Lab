@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ChambreRestController {
 
-    IChambreService chambreService;
+    private final IChambreService chambreService;
 
     // GET http://localhost:9090/chambre/retrieve-all-chambres
     @GetMapping("/retrieve-all-chambres")

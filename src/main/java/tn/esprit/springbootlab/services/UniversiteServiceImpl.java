@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UniversiteServiceImpl implements IUniversiteService {
 
-    UniversiteRepository universiteRepository;
+    private final UniversiteRepository universiteRepository;
 
     @Override
     public List<universite> retrieveAllUniversites() {

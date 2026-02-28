@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ReservationServiceImpl implements IReservationService {
 
-    ReservationRepository reservationRepository;
+    private final ReservationRepository reservationRepository;
 
     @Override
     public List<reservation> retrieveAllReservations() {

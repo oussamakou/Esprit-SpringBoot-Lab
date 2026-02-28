@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UniversiteRestController {
 
-    IUniversiteService universiteService;
+    private final IUniversiteService universiteService;
 
     // GET http://localhost:9090/universite/retrieve-all-universites
     @GetMapping("/retrieve-all-universites")

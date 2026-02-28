@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BlocRestController {
 
-    IBlocService blocService;
+    private final IBlocService blocService;
 
     // GET http://localhost:9090/bloc/retrieve-all-blocs
     @GetMapping("/retrieve-all-blocs")

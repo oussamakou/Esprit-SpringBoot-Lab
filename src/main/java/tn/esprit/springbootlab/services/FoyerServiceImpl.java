@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class FoyerServiceImpl implements IFoyerService {
 
-    FoyerRepository foyerRepository;
+    private final FoyerRepository foyerRepository;
 
     @Override
     public List<foyer> retrieveAllFoyers() {

@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class EtudiantServiceImpl implements IEtudiantService {
 
-    EtudiantRepository etudiantRepository;
+    private final EtudiantRepository etudiantRepository;
 
     @Override
     public List<etudiant> retrieveAllEtudiants() {

@@ -12,7 +12,7 @@ import java.util.List;
 public class BlocServiceImpl implements IBlocService {
 
     // Spring injecte automatiquement une instance de BlocRepository ici
-    BlocRepository blocRepository;
+    private final BlocRepository blocRepository;
 
     @Override
     public List<bloc> retrieveAllBlocs() {
